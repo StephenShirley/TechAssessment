@@ -1,0 +1,18 @@
+<div (click)="setScore1()" class="container">
+    <div>
+        <div>Score: {{getTreeScore(tree1[0])}}</div>
+        <ul *ngFor="let node of tree1">
+            <li>
+                <app-node [node]="node" [rootNode]="true"></app-node>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div>Score: {{getTreeScore(tree2[0])}}</div>
+        <ul *ngFor="let node of tree2">
+            <li>
+                <app-node [node]="node" [rootNode]="true"></app-node>
+            </li>
+        </ul>
+    </div>
+</div>

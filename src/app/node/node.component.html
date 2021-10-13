@@ -1,0 +1,7 @@
+<span class="number" [style.background-color]="node.color">{{node.value}}</span>
+<button (click)="addNode()">Add node</button>
+<button *ngIf="!rootNode" [disabled]="!recursiveCheck(node)" (click)="deleteNode.emit()">Delete node</button>
+<button *ngIf="!rootNode"(click)="flipColor()">Flip color</button>
+<ul *ngFor="let child of node.children; let i = index">
+    <li><app-node (deleteNode)="deleteChild(i)" [node]="child" [parentValue]="node.value"></app-node></li>
+</ul>
